@@ -21,13 +21,13 @@
 let element = document.querySelector('#container-01');
 let config = { backgroundColor: 'white' };
 let viewer = $3Dmol.createViewer( element, config );
-let pdbUri = 'S13com.pdb';
+let pdbUri = 'DNA_RD.pdb';
 jQuery.ajax( pdbUri, { 
   success: function(data) {
     let v = viewer;
     v.addModel( data, "pdb" );
     v.setStyle({resn:'G'},{stick:{}});
-    v.setStyle({not:{resn:'G'}}, {cartoon: {color: 'spectrum'}});
+    v.setStyle({}, {cartoon: {color: 'spectrum'}},true);
     v.zoomTo();                                      /* set camera */
     v.render();                                      /* render scene */
     v.zoom(1.2, 1000);                               /* slight zoom */
