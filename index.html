@@ -27,7 +27,7 @@ jQuery.ajax( pdbUri, {
     let v = viewer;
     // let protein = {chain:'D',and:{resi:['177','174','171','80']}}
     v.addModel( data, "pdb" );
-    v.setStyle( {resi:['177','174','171','80']} , {stick:{}});
+    v.setStyle( {resi:['177','174','171','80'],chain:'D'} , {stick:{}});
     // v.setStyle({not:protein}, {cartoon: {color: 'spectrum'}},false);
     v.zoomTo();                                      /* set camera */
     v.render();                                      /* render scene */
