@@ -26,7 +26,8 @@ jQuery.ajax( pdbUri, {
   success: function(data) {
     let v = viewer;
     v.addModel( data, "pdb" );                       /* load data */
-    v.setStyle({chain:'A'}, {stick: {color:'red'}});
+    v.setStyle({chain:'A'}, {stick:{}});
+    v.setStyle({chain:'B'}, {cartoon: {color: 'spectrum'}});
     v.zoomTo();                                      /* set camera */
     v.render();                                      /* render scene */
     v.zoom(1.2, 1000);                               /* slight zoom */
