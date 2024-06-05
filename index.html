@@ -33,7 +33,7 @@ jQuery.ajax( pdbUri, {
     v.addStyle( protein , {stick:{}}, true);
     v.addStyle( GGG , {stick:{}}, true);
     v.addStyle( CC , {stick:{}}), true;
-    data.addResLabels(GGG, v)
+    v.addResLabels(GGG)
     v.zoomTo();                                      /* set camera */
     v.render();                                      /* render scene */
     v.zoom(1.2, 1000);                               /* slight zoom */
