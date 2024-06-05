@@ -32,7 +32,7 @@ jQuery.ajax( pdbUri, {
     v.setStyle( protein , {stick:{}});
     v.setStyle( GGG , {stick:{}});
     v.setStyle( CC , {stick:{}});
-    // v.setStyle({not:protein}, {cartoon: {color: 'spectrum'}},false);
+    v.setStyle({not:protein,not:GGG,not:CC}}, {cartoon: {color: 'spectrum'}},false);
     v.zoomTo();                                      /* set camera */
     v.render();                                      /* render scene */
     v.zoom(1.2, 1000);                               /* slight zoom */
