@@ -30,7 +30,7 @@ jQuery.ajax( pdbUri, {
     v.zoomTo();                                      /* set camera */
     v.render();                                      /* render scene */
     v.zoom(1.2, 1000);                               /* slight zoom */
-    v.setStyle({chain:'A'},{stick: {color:'spectrum'}});
+    v.setStyle({chain:'A'}, {stick: {color:'spectrum'}});
   },
   error: function(hdr, status, err) {
     console.error( "Failed to load PDB " + pdbUri + ": " + err );
