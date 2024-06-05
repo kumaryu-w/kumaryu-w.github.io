@@ -29,10 +29,11 @@ jQuery.ajax( pdbUri, {
     let GGG = {chain:'E',resi:['20','21','18']}
     let CC = {chain:'F',resi:['7','8']}
     v.addModel( data, "pdb" );
-    v.setStyle( protein , {stick:{}});
-    v.setStyle( GGG , {stick:{}});
-    v.setStyle( CC , {stick:{}});
-    v.setStyle({not:protein,not:GGG,not:CC}}, {cartoon: {color: 'spectrum'}},false);
+    v.setStyle({}, {cartoon: {color: 'spectrum'}}, true);
+    v.setStyle( protein , {stick:{}}, true);
+    v.setStyle( GGG , {stick:{}}, true);
+    v.setStyle( CC , {stick:{}}), true;
+    
     v.zoomTo();                                      /* set camera */
     v.render();                                      /* render scene */
     v.zoom(1.2, 1000);                               /* slight zoom */
