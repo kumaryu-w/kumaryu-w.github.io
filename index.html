@@ -25,9 +25,13 @@ let pdbUri = 'DNA_RD.pdb';
 jQuery.ajax( pdbUri, { 
   success: function(data) {
     let v = viewer;
-    let protein = {resi:['177','174','171','80'],chain:'D'}
+    let protein = {resi:['177','174','80'],chain:'D'}
+    let GGG = {chain:'E',resi:['20','21','18']}
+    let CC = {chain:'F',resi:['7','8']}
     v.addModel( data, "pdb" );
     v.setStyle( protein , {stick:{}});
+    v.setStyle( GGG , {stick:{}});
+    v.setStyle( CC , {stick:{}});
     // v.setStyle({not:protein}, {cartoon: {color: 'spectrum'}},false);
     v.zoomTo();                                      /* set camera */
     v.render();                                      /* render scene */
