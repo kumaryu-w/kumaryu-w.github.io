@@ -13,7 +13,7 @@
 <p>RNA aptemer は RD-DNA complex を競合的に阻害する。</p>
 <div id="container-02" class="mol-container"></div>
 <h2>fig. 2 RD-DNA complex (pdb id: 1hjc)</h2>
-<p>転写因子であるAML1タンパク質のDNA結合ドメインが Runt Domain(RD)</p>
+<p>Runt Domain(RD) は転写因子であるAML1タンパク質のDNA結合ドメイン</p>
 <div id="container-01" class="mol-container"></div>
 <h2>fig. 3 DNA and RNA aptemer</h2>
 <p>RNA aptemer の配列は共通性はない。</p>
@@ -92,10 +92,16 @@ let pdbUri3 = 'S1_DNA.pdb';
 jQuery.ajax( pdbUri3, { 
   success: function(data) {
     let v = viewer3;
+    let GGG = {chain:'E',resi:['20','21','18']}
+    let CC = {chain:'F',resi:['7','8']}  
+      
     v.addModel( data, "pdb" );
     v.setStyle({chain:'E'}, {cartoon: {color: 'cyan'}});
     v.setStyle({chain:'F'}, {cartoon: {color: 'cyan'}});
     v.setStyle({chain:' '}, {cartoon: {color: 'spectrum'}});
+    v.addStyle( {chain:' ', resi:['27','28','36','39','40']} , {stick:{}});
+    v.addStyle( GGG , {stick:{}});
+    v.addStyle( CC , {stick:{}});
     v.zoomTo();                                      /* set camera */
     v.render();                                      /* render scene */
     v.zoom(1.2, 1000);                               /* slight zoom */
