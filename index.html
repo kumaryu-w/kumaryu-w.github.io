@@ -58,7 +58,7 @@ jQuery.ajax( pdbUri, {
   success: function(data) {
     let v = viewer;
     v.addModel( data, "pdb" );
-    v.setStyle({}, {cartoon: {cartoon: {color: 'spectrum'}});
+    v.setStyle({}, {cartoon: {color: 'spectrum'}});
     v.addStyle( {resi:['27','28','36','39','40']} , {stick:{}});
     v.addResLabels({resi:['27','28','36','39','40']});
     v.zoomTo();                                      /* set camera */
