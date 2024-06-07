@@ -5,6 +5,7 @@
 <title>Structure-activity relationship study of AML1 protein binding aptame</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+<p>Structure-activity relationship study of AML1 protein binding aptame</p>
 <h1>summary</h1>
 <p>11種のアプタマーの立体構造と結合親和性を紐づける構造活性相関を行った。</p>
 <p>構造解析で得たデータを機械的に選別して、結合に重要な構造的特徴を選択した。</p>
@@ -13,6 +14,10 @@
 <div id="container-02" class="mol-container"></div>
 <h2>fig. 2 RD-DNA complex (pdb id: 1hjc)</h2>
 <div id="container-01" class="mol-container"></div>
+<h2>fig. 3 DNA and RNA aptemer</h2>
+<p>RNA aptemer の配列は共通性はない。</p>
+<p>しかし、立体構造はDNAと類似する。</p>
+<div id="container-03" class="mol-container"></div>
 <style>
     .mol-container {
       width: 80%;
@@ -69,6 +74,28 @@ jQuery.ajax( pdbUri2, {
     v.render();                                      /* render scene */
     v.zoom(1.2, 1000);                               /* slight zoom */
     
+  },
+  error: function(hdr, status, err) {
+    console.error( "Failed to load PDB " + pdbUri + ": " + err );
+  },
+});
+</script>
+
+<script>
+let element3 = document.querySelector('#container-03');
+let config3 = { backgroundColor: 'black' };
+let viewer3 = $3Dmol.createViewer( element3, config3 );
+let pdbUri3 = 'S1_DNA.pdb';
+jQuery.ajax( pdbUri3, { 
+  success: function(data) {
+    let v = viewer3;
+    v.addModel( data, "pdb" );
+    v.setStyle({chain:'E'}, {cartoon: {color: 'cyan'}});
+    v.setStyle({chain:'F'}, {cartoon: {color: 'cyan'}});
+    v.setStyle({chain:' '}, {cartoon: {color: 'white'}});
+    v.zoomTo();                                      /* set camera */
+    v.render();                                      /* render scene */
+    v.zoom(1.2, 1000);                               /* slight zoom */
   },
   error: function(hdr, status, err) {
     console.error( "Failed to load PDB " + pdbUri + ": " + err );
