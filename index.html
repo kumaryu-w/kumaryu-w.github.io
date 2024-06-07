@@ -60,7 +60,7 @@ jQuery.ajax( pdbUri, {
     v.addModel( data, "pdb" );
     v.setStyle({}, {cartoon: {cartoon: {color: 'spectrum'}});
     v.addStyle( {resi:['27','28','36','39','40']} , {stick:{}});
-    v.addResLabels({resi:['27','28','36','39','40']})
+    v.addResLabels({resi:['27','28','36','39','40']});
     v.zoomTo();                                      /* set camera */
     v.render();                                      /* render scene */
     v.zoom(1.2, 1000);                               /* slight zoom */
