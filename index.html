@@ -50,13 +50,13 @@ jQuery.ajax( pdbUri, {
 
 
 <script>
-let element = document.querySelector('#container-02');
-let config = { backgroundColor: 'black' };
-let viewer = $3Dmol.createViewer( element, config );
-let pdbUri = 'S1.pdb';
-jQuery.ajax( pdbUri, { 
+let element2 = document.querySelector('#container-02');
+let config2 = { backgroundColor: 'black' };
+let viewer2 = $3Dmol.createViewer( element2, config2 );
+let pdbUri2 = 'S1.pdb';
+jQuery.ajax( pdbUri2, { 
   success: function(data) {
-    let v = viewer;
+    let v = viewer2;
     v.addModel( data, "pdb" );
     v.setStyle({}, {cartoon: {color: 'spectrum'}});
     v.addStyle( {resi:['27','28','36','39','40']} , {stick:{}});
