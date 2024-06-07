@@ -29,12 +29,12 @@ jQuery.ajax( pdbUri, {
     let GGG = {chain:'E',resi:['20','21','18']}
     let CC = {chain:'F',resi:['7','8']}
     v.addModel( data, "pdb" );
-    v.setStyle({chain:'D'}, {cartoon: {color: 'white'}}, true);
-    v.setStyle({chain:'E'}, {cartoon: {color: 'cyan'}}, true);
-    v.setStyle({chain:'F'}, {cartoon: {color: 'cyan'}}, true);
-    v.addStyle( protein , {stick:{}}, true);
-    v.addStyle( GGG , {stick:{}}, true);
-    v.addStyle( CC , {stick:{}}, true);
+    v.setStyle({chain:'D'}, {cartoon: {color: 'white'}});
+    v.setStyle({chain:'E'}, {cartoon: {color: 'cyan'}});
+    v.setStyle({chain:'F'}, {cartoon: {color: 'cyan'}});
+    v.addStyle( protein , {stick:{}});
+    v.addStyle( GGG , {stick:{}});
+    v.addStyle( CC , {stick:{}});
     
     v.addResLabels(protein)
     v.zoomTo();                                      /* set camera */
@@ -58,8 +58,8 @@ jQuery.ajax( pdbUri, {
   success: function(data) {
     let v = viewer;
     v.addModel( data, "pdb" );
-    v.setStyle({}, {cartoon: {cartoon: {color: 'spectrum'}}, true);
-    v.addStyle( {resi:['27','28','36','39','40']} , {stick:{}}, true);
+    v.setStyle({}, {cartoon: {cartoon: {color: 'spectrum'}});
+    v.addStyle( {resi:['27','28','36','39','40']} , {stick:{}});
     v.addResLabels({resi:['27','28','36','39','40']})
     v.zoomTo();                                      /* set camera */
     v.render();                                      /* render scene */
