@@ -68,7 +68,7 @@ jQuery.ajax( pdbUri2, {
   success: function(data) {
     let v = viewer2;
     v.addModel( data, "pdb" );
-    v.setStyle({}, {cartoon: {color: 'red'}});
+    v.setStyle({}, {cartoon: {color: 'spectrum'}});
     v.addStyle( {resi:['27','28','36','39','40']} , {stick:{}});
     v.addResLabels({resi:['27','28','36','39','40']});
     v.zoomTo();                                      /* set camera */
@@ -93,7 +93,7 @@ jQuery.ajax( pdbUri3, {
     v.addModel( data, "pdb" );
     v.setStyle({chain:'E'}, {cartoon: {color: 'cyan'}});
     v.setStyle({chain:'F'}, {cartoon: {color: 'cyan'}});
-    v.setStyle({chain:' '}, {cartoon: {color: 'red'}});
+    v.setStyle({chain:' '}, {cartoon: {color: 'spectrum'}});
     v.zoomTo();                                      /* set camera */
     v.render();                                      /* render scene */
     v.zoom(1.2, 1000);                               /* slight zoom */
